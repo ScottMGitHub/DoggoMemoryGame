@@ -1,0 +1,23 @@
+{
+    "name": "api",
+    "version": "1.0.0",
+    "description": "API",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "develop": "nodemon index.js"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "axios": "^0.21.1",
+        "compression": "^1.7.4",
+        "cookie-parser": "^1.4.5",
+        "cors": "^2.8.5",
+        "debug": "^4.3.1",
+        "dotenv": "^9.0.2",
+        "express": "^4.17.1",
+        "helmet": "^4.5.0",
+        "http-errors": "^1.8.0",
+        "nodemon": "^2.0.7"
+    }
+}

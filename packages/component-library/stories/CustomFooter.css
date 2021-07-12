@@ -1,0 +1,12 @@
+.custom-footer-wrapper{
+  width: 100%;
+  height: 1000px;
+  position: relative;
+}
+
+.custom-footer-wrapper main {
+  width: 100%;
+  height: 100%;
+  background-color: aquamarine;
+  position: relative;
+}

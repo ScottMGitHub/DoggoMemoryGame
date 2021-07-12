@@ -1,0 +1,12 @@
+{
+  "name": "@doggo-memory-game/styles",
+  "version": "1.0.0",
+  "description": "global style mixins",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+  },
+  "dependencies": {
+      "path": "^0.12.7"
+  }
+}

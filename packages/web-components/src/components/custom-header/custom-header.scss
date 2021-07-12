@@ -1,0 +1,21 @@
+$height: 50px;
+$margin: 15px;
+
+header {
+    width: 100%;
+    height: $height;
+    background-color: get-color(primary);
+    color: white;
+}
+
+.logo {
+    float: left;
+    margin-left: $margin;
+    line-height: $height;
+}
+
+.navigation {
+    float: right;
+    margin-right: $margin;
+    line-height: $height;
+}

@@ -1,0 +1,30 @@
+{
+  "name": "@doggo-memory-game/web-components",
+  "version": "1.0.1",
+  "description": "Custom Components Package",
+  "main": "dist/index.cjs.js",
+  "module": "dist/custom-elements/index.js",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/custom-elements/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/web-components/web-components.esm.js",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "stencil build --docs",
+    "watch": "stencil build --watch",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate"
+  },
+  "dependencies": {
+    "@doggo-memory-game/styles": "^1.0.0",
+    "@stencil/core": "^2.0.1",
+    "@stencil/sass": "^1.4.1"
+  },
+  "license": "MIT"
+}

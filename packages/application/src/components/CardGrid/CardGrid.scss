@@ -1,0 +1,35 @@
+@import '@doggo-memory-game/styles/mixins/media';
+
+.card-grid,
+%grid {
+    display: grid;
+    padding: 50px 0;
+
+    // X 12 grid
+    &--12 {
+        @extend %grid;
+    
+        @include media-screen-size(small, medium) {
+            margin-left: 1%;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include media-screen-size(large, 'extra-large', 'max') {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    // X 20 X 40 grid
+    &--20, &--40 {
+        @extend %grid;
+    
+        @include media-screen-size(small, medium, large) {
+            grid-template-columns: repeat(4, 21fr);
+        }
+
+        @include media-screen-size('extra-large', 'max') {
+            grid-template-columns: repeat(5, 1fr);
+        }
+
+    }
+}

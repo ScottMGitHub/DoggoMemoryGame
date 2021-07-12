@@ -1,0 +1,14 @@
+$default-theme: (
+    dark-grey: #272727,
+    medium-grey: #A9A9A9,
+    light-grey: #EFEFEF,
+    white: #F7F7F7,
+    primary: rgb(3, 92, 111),
+    secondary: rgb(32, 140, 160),
+    tertiary: #354736,
+);
+
+// TO DO ADD THEMES
+@function get-color($name) {
+    @return map-get($default-theme, $name);
+}

@@ -1,0 +1,9 @@
+::slotted(a) {
+    display: inline-block;
+    margin-left:20px;
+    color: get-color(white);
+    cursor: pointer;
+}
+::slotted(a:hover) {
+    color: get-color(light-grey);
+}

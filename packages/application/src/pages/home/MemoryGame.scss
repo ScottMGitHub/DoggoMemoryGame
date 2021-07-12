@@ -1,0 +1,62 @@
+@import '@doggo-memory-game/styles/mixins/colors';
+@import '@doggo-memory-game/styles/mixins/media';
+
+.home-page {
+    min-height: 500px;
+    width: 100%;
+    margin: 0 auto;
+    
+    .intro-section {
+        text-align: center;
+
+        h1 {
+            font-size: 50px;
+            margin-top: 0;
+            margin-bottom: 0;
+
+            color: get-color(secondary);
+        }
+        h2 {
+            color: get-color(tertiary);
+        }
+        p {
+            color: get-color(tertiary);
+        }
+        custom-button {
+            margin: 10px;
+        }
+
+    }
+    .cards-section {
+        min-height: 500px;
+    }
+    .complete-modal {
+        text-align: center;
+
+        h2 {
+            color: get-color(secondary);
+            margin-bottom: 10px;
+        }
+        custom-button {
+            margin: 10px;
+        }
+        .image-wrapper {
+            height:70%;
+            img {
+                height: 100%; 
+                @include media-screen-size(small, medium) {
+                    height: unset;
+                    max-height: 100%;
+                    max-width: 100%;
+                }
+            }
+        }
+        .congratulations-bones{
+            margin-bottom: 10px;
+        }
+    }
+    .timer {
+        position: fixed;
+        right: 15px;
+    }
+}

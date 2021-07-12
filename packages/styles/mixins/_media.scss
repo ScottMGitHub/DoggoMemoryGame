@@ -1,0 +1,19 @@
+$screen-size: (
+    small: 'screen and (max-width: 320px)',
+    medium: 'screen and (min-width: 321px) and (max-width: 672px)',
+    large: 'screen and (min-width: 673px) and (max-width: 1056px)',
+    extra-large: 'screen and (min-width: 1057px) and (max-width: 1312px)',
+    max: 'screen and (min-width: 1313px)'
+);
+
+@function get-size($size) {
+    @return map-get($screen-size, $size);
+}
+
+@mixin media-screen-size($sizes...) {
+    @each $size in $sizes {
+        @media #{get-size($size)} {
+            @content
+        }
+    }
+}

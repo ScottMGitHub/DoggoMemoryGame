@@ -1,0 +1,80 @@
+
+$border-radius: 5px;
+.custom-card,
+%custom-card {
+    border-radius: $border-radius;
+    box-shadow: 3px 3px 7px 3px get-color(light-grey);
+    cursor: pointer;
+
+    @include media-screen-size(small) {
+        height: 100px;
+        margin: 1px;
+    }
+ 
+    @include media-screen-size(medium) {
+        height: 130px;
+        margin: 2px;
+    }
+ 
+    @include media-screen-size(large) {
+        height: 250px;
+        margin: 5px;
+    }
+ 
+    @include media-screen-size('extra-large') {
+        height: 250px;
+        margin: 10px;
+    }
+
+    @include media-screen-size('max') {
+        height: 300px;
+        margin: 20px;
+    }
+
+    &--open {
+        @extend %custom-card;
+    }
+
+    &--closed {
+        @extend %custom-card;
+        border: 3px solid get-color(primary);
+        opacity: 0.3;
+        background: 
+        linear-gradient(135deg, get-color(primary) 25%, transparent 25%) -10px 0/ 20px 20px, 
+        linear-gradient(225deg, get-color(secondary) 25%, transparent 25%) -10px 0/ 20px 20px, 
+        linear-gradient(315deg, get-color(primary) 25%, transparent 25%) 0px 0/ 20px 20px, 
+        linear-gradient(45deg, get-color(secondary) 25%, #e5e5f7 25%) 0px 0/ 20px 20px;
+        box-shadow: 3px 3px 7px 3px get-color(light-grey);
+    }
+
+    &.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
+.card-image {
+    border-radius: $border-radius;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-label {
+    
+    text-align: center;
+    font-weight: bold;
+    color: get-color(medium-grey);
+    margin-top: -30px;
+
+    @include media-screen-size(small) {
+        font-size: 10px;
+    }
+
+    @include media-screen-size(medium) {
+        font-size: 10px;
+        margin-top: -20px;
+    }
+}
