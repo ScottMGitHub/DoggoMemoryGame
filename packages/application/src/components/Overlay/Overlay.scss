@@ -1,0 +1,37 @@
+@import '@doggo-memory-game/styles/mixins/colors';
+
+.overlay {
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color:white;
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+    &-hide {
+        display: none;
+    }
+
+    .content-wrapper {
+        top: 50%;
+        transform: translateY(-50%);
+        position: relative;
+    }
+
+    h1 {
+        color: get-color(primary);
+    }
+    
+    p {
+        color: get-color(tertiary);
+    }
+    .buttons-wrapper{
+        margin-top: 30px;
+        custom-button {
+            margin:10px;
+        }
+    }
+    .github-logo {
+        margin-top: 30px;
+    }
+}

@@ -1,15 +1,17 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { Emoji } from 'emoji-mart';
 import './MemoryGame.scss';
-import { triggerRefreshCards, triggerInitialiseCards } from "../../redux/actions/memoryGame";
+import { triggerRefreshCards } from "../../redux/actions/memoryGame";
 import CardGrid from '../../components/CardGrid/CardGrid';
 import Button from '../../components/Button/Button';
 import Modal from '../../components/Modal/Modal';
+import Overlay from '../../components/Overlay/Overlay';
 import Timer from '../../components/Timer/Timer';
 
 import {
+    getIsNotFirstLoad,
     getGameComplete,
     getGameCompleteImage
 } from '../../redux/selectors/memoryGame';
@@ -18,10 +20,12 @@ const MemoryGame = () => {
     const dispatch = useDispatch();
 
     const {
+        isNotFirstLoad,
         gameComplete,
         gameCompleteImage
     }  = useSelector(
         createStructuredSelector({
+            isNotFirstLoad: getIsNotFirstLoad,
             gameComplete: getGameComplete,
             gameCompleteImage: getGameCompleteImage
         })
@@ -35,14 +39,13 @@ const MemoryGame = () => {
                 await timer.resetTimer();
         })();
     }
-    
-    useEffect(() => {
-        dispatch(triggerInitialiseCards(6));
-    });
 
     return (
         <div className="home-page">
-            <div className="timer"><Timer stopTimer={gameComplete} /></div>
+            <Overlay triggerRefresh={triggerRefresh} hide={isNotFirstLoad}/>
+            <div className="timer">
+                <Timer stopTimer={gameComplete} />
+            </div>
             <section className="intro-section">
                 <h1>Doggo Memory Game</h1>
                 <p>Try and find the matching doggo. You can only open two cards at a time.</p>
@@ -54,7 +57,7 @@ const MemoryGame = () => {
             <section className="cards-section">
                 <CardGrid />
             </section>
-            <Modal open={gameComplete} className="complete-modal">
+            <Modal open={isNotFirstLoad && gameComplete} className="complete-modal">
                 <h2>Congratulations!</h2>
                 <div className="congratulations-bones">
                     <Emoji emoji={{ id: 'bone' }} size={25} /><Emoji emoji={{ id: 'bone' }} size={25} /><Emoji emoji={{ id: 'bone' }} size={25} />

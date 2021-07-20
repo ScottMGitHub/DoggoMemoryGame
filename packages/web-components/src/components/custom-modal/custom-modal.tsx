@@ -8,7 +8,7 @@ import { Component, h, Prop } from '@stencil/core';
 export class CustomModal {
 
     /** Is the modal in an open state */
-    @Prop() open =  false;
+    @Prop() open = false;
 
     render() {
         return (

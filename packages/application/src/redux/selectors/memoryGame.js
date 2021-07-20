@@ -11,8 +11,17 @@ export const getGameComplete = createSelector(
     memoryGame => memoryGame.cards.every(card => card.disabled)
 );
 
-
 export const getGameCompleteImage = createSelector(
     getMemoryGame,
     memoryGame => memoryGame.gameCompleteImage
+);
+
+export const getFoucComplete = createSelector(
+    getMemoryGame,
+    memoryGame => memoryGame.foucComplete
+);
+
+export const getIsNotFirstLoad = createSelector(
+    getCards,
+    cards => cards && cards.length > 0
 );

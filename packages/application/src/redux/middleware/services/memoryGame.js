@@ -1,15 +1,9 @@
 import axios from 'axios';
-import {cardsSetValue, gameCompleteImageSetValue, TRIGGER_INITIALISE_CARDS} from '../../actions/memoryGame';
-import {getCards} from '../../selectors/memoryGame';
+import {cardsSetValue, gameCompleteImageSetValue} from '../../actions/memoryGame';
 const { REACT_APP_API_URL } = process.env;
 
 export const memoryGameCardsService = (store, next, action) => {
     const result = next(action);
-    const cards = getCards(store.getState());
-   
-    // If cards have already been loaded return
-    if(action.type === TRIGGER_INITIALISE_CARDS && cards && cards.length > 0)
-        return result;
 
     (async () => {
         // Get cards 

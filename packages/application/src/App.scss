@@ -13,6 +13,7 @@ body {
     margin: 0;
     font-family: $font-family;
     background-color: get-color(light-grey);
+    display: block;
 }
 
 .header-logo-image{
