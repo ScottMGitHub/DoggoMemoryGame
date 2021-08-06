@@ -22,7 +22,7 @@ const MemoryGame = () => {
     const {
         isNotFirstLoad,
         gameComplete,
-        gameCompleteImage
+        gameCompleteImage,
     }  = useSelector(
         createStructuredSelector({
             isNotFirstLoad: getIsNotFirstLoad,
@@ -44,15 +44,17 @@ const MemoryGame = () => {
         <div className="home-page">
             <Overlay triggerRefresh={triggerRefresh} hide={isNotFirstLoad}/>
             <div className="timer">
-                <Timer stopTimer={gameComplete} />
+                <Timer stopTimer={gameComplete}/>
             </div>
             <section className="intro-section">
                 <h1>Doggo Memory Game</h1>
                 <p>Try and find the matching doggo. You can only open two cards at a time.</p>
                 <h2>New Game?</h2>
-                <Button buttonType="round" onClickEvent={() => triggerRefresh(6)}>12</Button>
-                <Button buttonType="round" onClickEvent={() => triggerRefresh(10)}>20</Button>
-                <Button buttonType="round" onClickEvent={() => triggerRefresh(20)}>40</Button>
+                <div className="button-wrapper">
+                    <Button buttonType="round" onClickEvent={() => triggerRefresh(6)}>12</Button>
+                    <Button buttonType="round" onClickEvent={() => triggerRefresh(10)}>20</Button>
+                    <Button buttonType="round" onClickEvent={() => triggerRefresh(20)}>40</Button>
+                </div>
             </section>
             <section className="cards-section">
                 <CardGrid />

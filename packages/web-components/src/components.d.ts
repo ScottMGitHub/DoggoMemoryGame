@@ -15,6 +15,14 @@ export namespace Components {
           * Is the button disabled
          */
         "disabled": boolean;
+        /**
+          * Displays the loading spinner on click
+         */
+        "displayLoadingSpinner": boolean;
+        /**
+          * Button state method, this is required for changing the state in the implementation layer
+         */
+        "setButtonState": (value: 'idle' | 'loading') => Promise<void>;
     }
     interface CustomCard {
         /**
@@ -118,6 +126,10 @@ declare namespace LocalJSX {
           * Is the button disabled
          */
         "disabled"?: boolean;
+        /**
+          * Displays the loading spinner on click
+         */
+        "displayLoadingSpinner"?: boolean;
     }
     interface CustomCard {
         /**

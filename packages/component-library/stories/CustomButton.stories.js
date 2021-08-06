@@ -19,17 +19,27 @@ export default {
       description: 'If true, the button is displayed as disabled',
       defaultValue: { summary: false },
     },
+    displayLoadingSpinner: {
+      type: 'boolean',
+      description: 'If true, the button displays a spinner when clicked',
+      defaultValue: { summary: false },
+    },
   },
 };
 
 const defaultArgs = {
   disabled: false,
   text: 'Click',
-  type: 'round'
+  type: 'round',
+  displayLoadingSpinner: false
 };
 
 const Template = args => {
-  return <custom-button disabled={args.disabled} button-type={args.type} dangerouslySetInnerHTML={{ __html:args.text}}/>;
+  return <custom-button 
+  disabled={args.disabled} 
+  button-type={args.type} 
+  display-loading-spinner={args.displayLoadingSpinner}
+  dangerouslySetInnerHTML={{ __html:args.text}}/>;
 };
 
 export const Button = Template.bind({});

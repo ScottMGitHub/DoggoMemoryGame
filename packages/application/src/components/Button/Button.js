@@ -4,12 +4,17 @@ const Button = ({
     disabled,
     buttonType,
     className,
+    displayLoadingSpinner,
     onClickEvent,
     children
 }) => {
 
     return(
-        <custom-button button-type={buttonType} disabled={disabled} class={className}
+        <custom-button 
+            button-type={buttonType} 
+            display-loading-spinner={displayLoadingSpinner}
+            disabled={disabled} 
+            class={className}
             onClick={(event) => {
                 if (onClickEvent) {
                     onClickEvent(event.detail);

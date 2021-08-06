@@ -1,12 +1,7 @@
 
-
-/* Styles are scoped using shadow dom */
-my-component {
-    display:block;
-}
-
 button {
     cursor: pointer;
+    display: inline-block;
 
     &.primary {
         background-color: get-color(secondary);
@@ -33,6 +28,10 @@ button {
         border: 0;
         text-transform: uppercase;
         letter-spacing: 0.07rem;
+
+        .button-content {
+            display: inline-block;
+        }
     }
     
 
@@ -46,4 +45,29 @@ button {
             opacity: 1;
         }
     }
+
+    &.round.loading .button-content {
+        display: none;
+    }
+
+    &.round.loading:after {
+        content: " ";
+        display: block;
+        width: 35px;
+        height: 35px;
+        margin: 0;
+        border-radius: 50%;
+        border: 6px solid get-color(light-grey);
+        border-color: get-color(light-grey) transparent get-color(light-grey) transparent;
+        animation: loading-frames 1.2s linear infinite;
+    }
+
+    @keyframes loading-frames {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
 }

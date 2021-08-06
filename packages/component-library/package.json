@@ -10,7 +10,7 @@
     "@storybook/addon-links": "^6.2.8",
     "@storybook/html": "^6.2.8",
     "@storybook/react": "^6.2.8",
-    "@doggo-memory-game/web-components": "1.0.1",
+    "@doggo-memory-game/web-components": "1.0.2",
     "babel-loader": "8.1.0"
   },
   "scripts": {

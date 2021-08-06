@@ -1,6 +1,4 @@
 import { Component, h, Method, State } from '@stencil/core';
-
-
 @Component({
     shadow: true,
     tag: 'custom-timer',
@@ -8,9 +6,13 @@ import { Component, h, Method, State } from '@stencil/core';
 })
 export class CustomTimer {
 
-
+    /** Current timer time */
     @State() time: string;
+
+    /** Interval to increment */
     @State() interval: any;
+
+    /** Total seconds counter*/
     @State() totalSeconds: number;
 
     /** Called once before component loads */
