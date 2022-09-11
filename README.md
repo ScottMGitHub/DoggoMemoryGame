@@ -1,9 +1,6 @@
 # Doggo Memory Game :dog:
 Classic Memory Game - Using MonoRepo
 
-Isn't a monorepo and custom web components overkill for such a small project? 
-Yes, but the point of this project is about the "how" and not the "what".
-
 ## Link to deployed version :bone:
 [DoggoMemoryGame](https://doggo-memory-game-application.herokuapp.com/)
 
