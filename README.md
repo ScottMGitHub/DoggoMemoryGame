@@ -2,7 +2,7 @@
 Classic Memory Game - Using MonoRepo
 
 ## Link to deployed version :bone:
-[DoggoMemoryGame](https://doggo-memory-game-application.herokuapp.com/)
+*No longer available due to end of heroku free tier*
 
 ## Speical thanks :bone:
 Thanks to Dog CEO - Dog API - where I fetch my doggos from;
@@ -108,6 +108,7 @@ which is the injected when pushed in order to run the build and deploy the packa
 Publishing an update to NPM for web-components or styles packages, will require a version bump.
 
 ### Heroku
+*No longer available due to end of heroku free tier, documentation kept for posterity*
 Ordinarily Heroku would be set up to deploy a single application at a time, 
 so we need to **add two separate applications on heroku**, load the appropriate build packs, 
 add the necessary variables and reference specific Github actions in our workflows. 
